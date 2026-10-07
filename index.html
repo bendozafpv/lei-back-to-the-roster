@@ -38,11 +38,11 @@ details{margin-top:14px;color:#b8c9db;font-size:12px;line-height:1.7}summary{cur
       <div class="tag">Unofficial Fan Project · Case #008</div>
       <h1>LEI WULONG<br>BACK TO THE ROSTER</h1>
       <p>Die Akte bleibt offen. Schau Leis Intro und kämpfe dich danach zurück zum Roster.</p>
-      <label for="duration">Zeit bis zum Gate</label>
+      <div class="settings"><label for="difficulty">Schwierigkeit</label><select id="difficulty"><option value="training">Training · Locker einsteigen</option><option value="arcade" selected>Arcade · Ausweichen &amp; Kontern</option><option value="hardcore">Hardcore · Schnell &amp; gnadenlos</option></select></div><label for="duration">Zeit bis zum Gate</label>
       <select id="duration"><option value="60">1 Minute · Kurzrunde</option><option value="120" selected>2 Minuten · Standard</option><option value="180">3 Minuten · Lange Runde</option></select>
       <button class="primary" id="startCase" disabled>SPIEL LÄDT …</button>
       <div id="loadStatus" class="status" role="status"></div>
-      <details><summary>SO SPIELST DU</summary>Springe über gelbe Barrikaden, schlage Kisten, Drohnen und Gegner. Sammle Akten: Fünf Akten heilen ein Herz. Öffne am Ende das Roster Gate.<br>Handy: JUMP links, ATTACK rechts. Tastatur: Space / W / ↑ springen, X / Enter schlagen.</details>
+      <details><summary>SO SPIELST DU</summary>Gelbe Barrikaden überspringen, Kisten und Drohnen schlagen. Arcade &amp; Hardcore: Beim roten Warnsignal JUMP, danach landen und bei BLAU mit ATTACK kontern. Gegner und Gate blocken Dauerangriffe. Das Tempo steigt im Verlauf. Heilung pro Herz: Training 5, Arcade 8, Hardcore 10 Akten.<br>Handy: JUMP links, ATTACK rechts. Tastatur: Space / W / ↑ springen, X / Enter schlagen.</details>
       <div class="small">#WeNeedLeiWulongBack · Fan-made, not affiliated with Bandai Namco.</div>
     </div>
   </section>
@@ -55,7 +55,7 @@ details{margin-top:14px;color:#b8c9db;font-size:12px;line-height:1.7}summary{cur
 const $=id=>document.getElementById(id),frame=$('gameFrame'),video=$('caseVideo');
 let phase='launch',prepared=false,ready=false;
 const qa=new URLSearchParams(location.search).has('qa');
-frame.src='game.html'+(qa?'?qa':'');
+frame.src='game.html?v=8'+(qa?'&qa':'');
 frame.addEventListener('load',()=>{
   try{ready=!!frame.contentDocument.getElementById('startBtn');}catch(e){ready=false;}
   $('startCase').disabled=!ready;
@@ -67,6 +67,7 @@ function prepareGame(){
   if(!ready)throw new Error('Spiel wird noch geladen.');
   const d=frame.contentDocument;
   d.getElementById('duration').value=$('duration').value;
+  d.getElementById('difficulty').value=$('difficulty').value;
   d.getElementById('startBtn').click();
   d.getElementById('pause').click();
   prepared=true;
