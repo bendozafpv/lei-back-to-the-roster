@@ -42,7 +42,7 @@ details{margin-top:14px;color:#b8c9db;font-size:12px;line-height:1.7}summary{cur
       <select id="duration"><option value="60">1 Minute · Kurzrunde</option><option value="120" selected>2 Minuten · Standard</option><option value="180">3 Minuten · Lange Runde</option></select>
       <button class="primary" id="startCase" disabled>SPIEL LÄDT …</button>
       <div id="loadStatus" class="status" role="status"></div>
-      <details><summary>SO SPIELST DU</summary>Gelbe Barrikaden überspringen, Kisten und Drohnen schlagen. Arcade &amp; Hardcore: Beim roten Warnsignal JUMP, danach landen und bei BLAU mit ATTACK kontern. Gegner und Gate blocken Dauerangriffe. Das Tempo steigt im Verlauf. Heilung pro Herz: Training 5, Arcade 8, Hardcore 10 Akten.<br>Handy: JUMP links, ATTACK rechts. Tastatur: Space / W / ↑ springen, X / Enter schlagen.</details>
+      <details><summary>SO SPIELST DU</summary>Gelbe Barrikaden überspringen, Kisten und Drohnen schlagen. Arcade &amp; Hardcore: Bei der Gegnerwarnung den grünen AUSWEICHEN-Knopf kurz vor dem Schlag drücken. Bei offener Deckung mit dem roten ANGRIFF-Knopf kontern. Ausweichen schützt kurz vor Schlägen und hat eine Abklingzeit. Barrikaden musst du mit dem blauen SPRINGEN-Knopf überspringen. ANGRIFF am Boden = Faustschlag; beim Springen = Sprungtritt. Gegner und Gate blocken Dauerangriffe. Das Tempo steigt im Verlauf. Heilung pro Herz: Training 5, Arcade 8, Hardcore 10 Akten.<br>Handy: Blau SPRINGEN links, Grün AUSWEICHEN in der Mitte, Rot ANGRIFF rechts. Tastatur: Space / W / ↑ springen, Shift / C / ↓ ausweichen, X / Enter angreifen.</details>
       <div class="small">#WeNeedLeiWulongBack · Fan-made, not affiliated with Bandai Namco.</div>
     </div>
   </section>
@@ -55,7 +55,7 @@ details{margin-top:14px;color:#b8c9db;font-size:12px;line-height:1.7}summary{cur
 const $=id=>document.getElementById(id),frame=$('gameFrame'),video=$('caseVideo');
 let phase='launch',prepared=false,ready=false;
 const qa=new URLSearchParams(location.search).has('qa');
-frame.src='game.html?v=8'+(qa?'&qa':'');
+frame.src='game.html?v=9'+(qa?'&qa':'');
 frame.addEventListener('load',()=>{
   try{ready=!!frame.contentDocument.getElementById('startBtn');}catch(e){ready=false;}
   $('startCase').disabled=!ready;
