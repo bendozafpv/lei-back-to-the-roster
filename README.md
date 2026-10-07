@@ -6,7 +6,7 @@ Mobile-first Lei Wulong fan minigame for **#WeNeedLeiWulongBack**.
 
 https://bendozafpv.github.io/lei-back-to-the-roster/
 
-Choose a 1-, 2-, or 3-minute mission and press **START CASE**. The original V2 campaign video plays with sound, then the game starts automatically. **INTRO ÜBERSPRINGEN** skips the video. Mission time begins after the intro. If playback is blocked, tap **VIDEO ABSPIELEN** or skip.
+Choose a 1-, 2-, or 3-minute mission and press **START CASE**. The Case video plays with sound, starting when Lei is fully inside the office, then the game starts automatically. **INTRO ÜBERSPRINGEN** skips the video. Mission time begins after the intro. If playback is blocked, tap **VIDEO ABSPIELEN** or skip.
 
 - Touch: **JUMP** and **ATTACK**.
 - Keyboard: Space / W / Arrow Up to jump; X / Enter to attack.
@@ -16,7 +16,7 @@ Choose a 1-, 2-, or 3-minute mission and press **START CASE**. The original V2 c
 ## Files
 
 - `index.html`: intro and game launcher.
-- `assets/case-intro.mp4`: original campaign clip from V2, compressed for mobile with audio preserved.
+- `assets/case-intro.mp4`: user-supplied Case campaign clip, trimmed from source 2.0 seconds (office scene), compressed for mobile with audio preserved.
 - `assets/case-poster.jpg`: video poster frame.
 - `game.html`: unchanged, complete V7 game with embedded artwork. This file can also be downloaded and played independently offline.
 
